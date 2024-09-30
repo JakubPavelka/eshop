@@ -1,0 +1,76 @@
+@import "../../common/styles/variables";
+@import "../../common/styles/mixins";
+
+.searchbar {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  grid-template-areas:
+    "bar close"
+    "result result";
+  max-width: 600px;
+  width: 100%;
+  margin: 24px auto 0 auto;
+
+  @include MediaQueries(medium-767px) {
+    margin-bottom: 18px;
+  }
+
+  .search-clear-btn {
+    position: absolute;
+    right: 98px;
+    top: 13.5px;
+    color: $color-primary;
+    font-size: 16px;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  input {
+    border: 0;
+    background-color: #fff;
+    border: 1px solid $color-primary;
+    font-size: 17px;
+    padding: 12px 24px;
+    width: 100%;
+    border-radius: 4px 0 0 4px;
+    grid-area: bar;
+
+    &:focus-visible {
+      outline: none;
+    }
+
+    &::placeholder {
+      font-size: 17px;
+    }
+  }
+  .search-clear {
+    display: flex;
+    align-items: center;
+    background-color: $color-secondary;
+    color: $text-white;
+    font-size: 17px;
+    border-radius: 0 4px 4px 0;
+    grid-area: close;
+
+    &:hover {
+      background-color: $color-primary;
+    }
+
+    p {
+      cursor: pointer;
+      padding: 13px 24px;
+    }
+
+    span {
+      margin-inline: 4px;
+      user-select: none;
+    }
+  }
+
+  .no-results {
+    position: absolute;
+    bottom: -30px;
+    left: 15px;
+  }
+}

@@ -1,0 +1,124 @@
+@import "../../common/styles/mixins";
+@import "../../common/styles/variables";
+
+.filter {
+  @include MediaQueries(small-576px) {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  br {
+    @include MediaQueries(small-576px) {
+      display: none;
+    }
+  }
+  p {
+    display: inline-flex;
+    align-items: center;
+    font-size: 18px;
+    cursor: pointer;
+    margin-bottom: 12px;
+
+    @include MediaQueries(small-576px) {
+      margin-bottom: 9px;
+      align-items: start;
+      max-width: 63px;
+    }
+
+    span {
+      height: 23px;
+      svg {
+        height: 100%;
+        width: auto;
+        @include MediaQueries(small-576px) {
+          margin-top: -2px;
+        }
+      }
+    }
+  }
+  h5 {
+    display: inline-flex;
+    align-items: center;
+    font-weight: normal;
+    cursor: pointer;
+    font-size: 18px;
+    margin-block: 10px;
+
+    @include MediaQueries(small-576px) {
+      margin-block: 8px;
+      max-width: fit-content;
+    }
+
+    svg {
+      transition: transform 0.2s;
+    }
+
+    svg.active {
+      transform: rotate(90deg);
+    }
+  }
+
+  .filter-category,
+  .filter-rating,
+  .filter-price {
+    display: flex;
+    flex-direction: column;
+
+    li {
+      margin-left: 8px;
+      cursor: pointer;
+    }
+
+    li:not(:last-child) {
+      margin-bottom: 10px;
+    }
+
+    .filters-li-div {
+      display: none;
+
+      li {
+        display: inline-flex;
+      }
+    }
+
+    .filters-li-div.active {
+      display: block;
+
+      @include MediaQueries(small-576px) {
+        max-width: 140px;
+      }
+    }
+  }
+
+  .filter-price {
+    .filters-li-div {
+      li:last-child {
+        margin-bottom: 16px;
+      }
+    }
+  }
+
+  .filter-reset-btn {
+    background-color: $color-primary;
+    border: none;
+    padding: 8px 16px;
+    color: $text-white;
+    width: 100%;
+    margin-top: 6px;
+    border-radius: 4px;
+    cursor: pointer;
+
+    @include MediaQueries(small-576px) {
+      max-width: 150px;
+      margin-bottom: 14px;
+    }
+
+    &:hover {
+      background-color: $color-secondary;
+    }
+  }
+}
+.filter.active {
+  width: 100%;
+  max-width: 150px;
+}

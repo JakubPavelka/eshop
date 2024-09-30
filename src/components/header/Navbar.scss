@@ -1,0 +1,175 @@
+@import "../../common/styles/variables";
+@import "../../common/styles/mixins";
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  height: 80px;
+
+  @include MediaQueries(medium-767px) {
+    gap: 0;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    user-select: none;
+
+    h2 {
+      color: $text-white;
+      font-size: $font-heading;
+      letter-spacing: 0.6px;
+      line-height: 35px;
+    }
+
+    svg {
+      width: 30px;
+      height: 30px;
+      color: $text-white;
+    }
+  }
+
+  .links {
+    display: flex;
+    gap: 20px;
+    color: $text-white;
+
+    @include MediaQueries(medium-767px) {
+      position: absolute;
+      display: block;
+      left: -100%;
+      top: 80px;
+      height: calc(100vh - 80px);
+      transition: left 0.3s;
+      background-color: $color-primary;
+      max-width: 200px;
+      width: 100%;
+      z-index: 1;
+    }
+
+    @include MediaQueries(small-576px) {
+      max-width: 170px;
+    }
+
+    .products {
+      position: relative;
+
+      span {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 2px;
+
+        @include MediaQueries(medium-767px) {
+          padding: 12px 10px;
+          display: inline-flex;
+        }
+
+        svg {
+          height: 19px;
+          width: 19px;
+        }
+      }
+
+      .dropdown {
+        font-size: $font-text;
+        padding-top: 31px;
+        display: none;
+        position: absolute;
+        left: -41.5px;
+        color: $text-white;
+        background-color: $color-primary;
+        list-style: none;
+        white-space: nowrap;
+        text-align: center;
+        z-index: 100;
+
+        @include MediaQueries(medium-767px) {
+          position: unset;
+          padding-top: 0;
+          text-align: left;
+        }
+        li {
+          background-color: $color-primary;
+          color: $text-white;
+          cursor: pointer;
+
+          &:hover {
+            background-color: $color-secondary;
+          }
+          &:first-child {
+            position: relative;
+          }
+
+          a {
+            display: block;
+            padding: 14px;
+
+            @include MediaQueries(medium-767px) {
+              padding: 12px 10px 12px 21px;
+            }
+          }
+        }
+      }
+
+      .dropdown.active {
+        @include MediaQueries(medium-767px) {
+          display: block !important;
+        }
+      }
+
+      &:hover .dropdown {
+        display: block;
+
+        @include MediaQueries(medium-767px) {
+          display: none;
+        }
+      }
+    }
+
+    a {
+      @include MediaQueries(medium-767px) {
+        display: inline-flex;
+        padding: 12px 10px;
+      }
+    }
+  }
+  .links.active {
+    @include MediaQueries(medium-767px) {
+      left: 0;
+    }
+  }
+  .cart-search {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-left: auto;
+
+    .favourites-a {
+      height: 26px;
+    }
+
+    .cart-a {
+      height: 26px;
+    }
+
+    svg {
+      color: $text-white;
+      width: 26px;
+      height: 26px;
+      cursor: pointer;
+    }
+
+    .hamburger {
+      display: none;
+      height: 26px;
+
+      @include MediaQueries(medium-767px) {
+        display: block;
+      }
+    }
+  }
+}

@@ -1,0 +1,48 @@
+.items-card-skeleton {
+  width: 100%;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.card-skeleton-bg {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.skeleton-img {
+  width: 100%;
+  height: auto;
+  animation: pulse 1.5s infinite;
+  color: #d6d6d6;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+.skeleton-data-wrapper {
+  margin-top: 10px;
+}
+
+.skeleton-data {
+  margin-top: 5px;
+}
+
+.rating {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}

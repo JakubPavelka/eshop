@@ -1,0 +1,115 @@
+@import "../common/styles/variables";
+@import "../common/styles/mixins";
+
+.favourites-w-items {
+  max-width: 1000px;
+  margin: 0 auto;
+  h4 {
+    font-size: 32px;
+    text-align: center;
+    margin: 38px 0 10px 0;
+  }
+
+  &-row:not(:last-child) {
+    border-bottom: 1px solid rgb(221, 221, 221);
+  }
+
+  &-row:last-child {
+    margin-bottom: 12px;
+  }
+
+  &-row {
+    display: flex;
+    align-items: center;
+    padding: 24px 12px;
+    position: relative;
+
+    @include MediaQueries(small-576px) {
+      display: grid;
+      grid-template-columns: max-content 1fr;
+      grid-template-areas:
+        "img text"
+        "icons icons";
+      padding: 16px;
+      row-gap: 16px;
+    }
+
+    img {
+      width: 160px;
+      height: 160px;
+      object-fit: contain;
+
+      @include MediaQueries(large-960px) {
+        width: 140px;
+        height: 140px;
+      }
+      @include MediaQueries(medium-767px) {
+        width: 120px;
+        height: 120px;
+      }
+      @include MediaQueries(small-576px) {
+        grid-area: img;
+      }
+    }
+
+    .favourites-w-items-text {
+      display: flex;
+      flex-direction: column;
+      font-size: 24px;
+      max-width: 600px;
+      margin: 30px 0 auto 24px;
+
+      @include MediaQueries(large-960px) {
+        font-size: 20px;
+      }
+      @include MediaQueries(medium-767px) {
+        font-size: 18px;
+        margin: 18px 0 auto 16px;
+      }
+      @include MediaQueries(small-576px) {
+        grid-area: text;
+        font-size: 15.5px;
+      }
+
+      span {
+        font-size: 22px;
+        margin-top: 12px;
+
+        @include MediaQueries(large-960px) {
+          font-size: 18px;
+        }
+        @include MediaQueries(medium-767px) {
+          font-size: 15px;
+        }
+      }
+    }
+    .favourites-w-items-delete-cart {
+      display: flex;
+      align-items: center;
+      font-size: 24px;
+      cursor: pointer;
+      margin-left: auto;
+
+      svg:first-child {
+        margin-right: 6px;
+        margin: 0 6px 0 32px;
+        transition: color 0.3s;
+
+        &:hover {
+          color: $color-primary;
+        }
+      }
+
+      svg:last-child {
+        transition: color 0.3s;
+        &:hover {
+          color: rgb(250, 0, 0);
+        }
+      }
+
+      @include MediaQueries(small-576px) {
+        grid-area: icons;
+      }
+    }
+  }
+}

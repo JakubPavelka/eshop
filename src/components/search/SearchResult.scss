@@ -1,0 +1,54 @@
+@import "../../common/styles/variables";
+@import "../../common/styles/mixins";
+
+.search-results {
+  grid-area: result;
+  position: absolute;
+  top: 0;
+  z-index: 1000;
+  background-color: white;
+  border: 1px solid $color-primary;
+  border-radius: 4px;
+  margin-top: 10px;
+
+  max-height: 500px;
+  overflow-y: auto;
+  width: 100%;
+  display: none;
+
+  a {
+    display: block;
+    padding: 14px;
+
+    &:hover {
+      background-color: rgb(252, 252, 252);
+    }
+
+    div {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      img {
+        width: 64px;
+        height: 64px;
+        object-fit: contain;
+        @include MediaQueries(small-576px) {
+          width: 58px;
+          height: 58px;
+        }
+      }
+      p {
+        @include MediaQueries(small-576px) {
+          font-size: 15px;
+        }
+        &:last-child {
+          margin-left: auto;
+        }
+      }
+    }
+  }
+}
+
+.search-results.active {
+  display: block;
+}

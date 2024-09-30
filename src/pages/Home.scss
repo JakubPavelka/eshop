@@ -1,0 +1,15 @@
+@import "../common/styles/mixins";
+
+.home-filter-items {
+  display: flex;
+  gap: 3%;
+  margin-top: 50px;
+
+  @include MediaQueries(medium-767px) {
+    margin-top: 24px;
+  }
+
+  @include MediaQueries(small-576px) {
+    flex-direction: column;
+  }
+}

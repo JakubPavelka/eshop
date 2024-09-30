@@ -1,0 +1,39 @@
+@import "../../common/styles/variables";
+@import "../../common/styles/mixins";
+
+footer {
+  margin-top: auto;
+  background-color: $color-primary;
+  padding-block: 24px;
+
+  .footer-wrapper {
+    text-align: center;
+    color: $text-white;
+
+    p {
+      font-size: 18px;
+    }
+
+    .footer-contact p:first-child {
+      margin-block: 6px;
+    }
+
+    .footer-socials {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      margin-top: 10px;
+
+      svg {
+        height: 24px;
+        width: 24px;
+        cursor: pointer;
+      }
+
+      svg:last-child {
+        margin-top: 2px;
+      }
+    }
+  }
+}

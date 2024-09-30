@@ -1,0 +1,57 @@
+@import "./common/styles/variables";
+@import "./common/styles/mixins";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background-color: $text-white;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  max-width: 1400px;
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: 20px;
+
+  @include MediaQueries(extraLarge-1200px) {
+    padding-inline: 15px;
+  }
+
+  @include MediaQueries(medium-767px) {
+    padding-inline: 10px;
+  }
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.app.overflow {
+  overflow-y: hidden;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}

@@ -1,0 +1,105 @@
+@import "../../common/styles/variables";
+@import "../../common/styles/mixins";
+
+.product-detail {
+  &-card {
+    background-color: $text-white;
+    padding: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+
+    @include MediaQueries(large-960px) {
+      gap: 30px;
+    }
+
+    @include MediaQueries(medium-767px) {
+      flex-direction: column;
+      padding: 24px;
+    }
+
+    @include MediaQueries(small-576px) {
+      gap: 10px;
+      padding: 52px 6px;
+    }
+
+    &-info {
+      h3 {
+        max-width: 500px;
+        width: 100%;
+        font-size: 28px;
+        margin-bottom: 16px;
+
+        @include MediaQueries(medium-767px) {
+          max-width: unset;
+        }
+      }
+
+      .product-detail-desc {
+        max-width: 400px;
+        width: 100%;
+        line-height: 21px;
+        color: rgb(82, 82, 82);
+
+        @include MediaQueries(medium-767px) {
+          max-width: unset;
+        }
+      }
+
+      .product-detail-rating {
+        display: flex;
+        align-items: center;
+        font-size: 20px;
+        margin: 36px 0 64px 0;
+
+        @include MediaQueries(medium-767px) {
+          margin: 18px 0 26px 0;
+        }
+
+        svg {
+          color: rgb(230, 201, 42);
+          margin: -1.5px 12px 0 1.5px;
+        }
+      }
+
+      .product-detail-cart-fav {
+        display: flex;
+        align-items: center;
+
+        // @include MediaQueries(medium-767px) {
+        //   margin-bottom: 64px;
+        // }
+
+        button {
+          border: 0;
+          background-color: $color-primary;
+          padding: 12px 16px;
+          width: 100%;
+          color: $text-white;
+          font-size: $font-text;
+          border-radius: 10px;
+          cursor: pointer;
+
+          &:hover {
+            background-color: $color-secondary;
+          }
+        }
+
+        svg {
+          height: 36px;
+          width: 36px;
+          cursor: pointer;
+          margin-left: 12px;
+          color: rgb(236, 14, 14);
+        }
+      }
+    }
+  }
+}
+.product-detail.loading {
+  height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

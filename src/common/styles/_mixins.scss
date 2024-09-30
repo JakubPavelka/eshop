@@ -1,0 +1,24 @@
+// MEDIA QUERIES
+@mixin MediaQueries($breakpoint) {
+  @if $breakpoint == small-576px {
+    @media (max-width: 576px) {
+      @content;
+    }
+  } @else if $breakpoint == medium-767px {
+    @media (max-width: 767px) {
+      @content;
+    }
+  } @else if $breakpoint == large-960px {
+    @media (max-width: 960px) {
+      @content;
+    }
+  } @else if $breakpoint == extraLarge-1200px {
+    @media (max-width: 1200px) {
+      @content;
+    }
+  } @else if $breakpoint == extraLarge2-1550px {
+    @media (max-width: 1550px) {
+      @content;
+    }
+  }
+}
